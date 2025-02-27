@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Scheduler.Data;
+using Scheduler.Repository.Interfaces;
+using Scheduler.Repository;
 using Scheduler.Services;
 using System.Text;
 
@@ -14,6 +16,8 @@ builder.Services.AddDbContext<appDbContext>(options => options.
 UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 
 
 
