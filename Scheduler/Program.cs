@@ -16,6 +16,8 @@ builder.Services.AddDbContext<appDbContext>(options => options.
 UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<PasswordHasher>();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
