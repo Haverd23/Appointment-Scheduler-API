@@ -6,6 +6,7 @@ using Scheduler.Repository.Interfaces;
 using Scheduler.Repository;
 using Scheduler.Services;
 using System.Text;
+using Scheduler.DTOs.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<TokenService>();
 builder.Services.AddScoped<PasswordHasher>();
+builder.Services.AddAutoMapper(typeof(MappingDTOProfile));
+
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
