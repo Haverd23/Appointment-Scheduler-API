@@ -9,6 +9,8 @@ namespace Scheduler.DTOs.Mappings
         { 
             CreateMap<Scheduler.Models.User, UserLoginDTO>().ReverseMap();
             CreateMap<Scheduler.Models.User, RegisterDTO>().ReverseMap();
+            CreateMap<Scheduler.Models.User, UpdateDTO>().ReverseMap();
+            CreateMap<Scheduler.Models.User, GetUserDTO>().ReverseMap();
 
         }
     }
